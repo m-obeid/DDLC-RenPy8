@@ -3,6 +3,15 @@
  <h1>Doki Doki Literature Club using Ren'Py 8!</h1>
 </div>
 
+<div align="center">
+ <br>
+ <img src="cinnamon-bun.webp" height="80" alt="Sayori"> <!-- we must love the bun -->
+ <img src="best-girl.webp" height="80" alt="Yuri"> <!-- yes -->
+ <img src="cupcake.webp" height="80" alt="Natsuki">
+ <img src="just-monika.webp" height="80" alt="Monika">
+ <br><br>
+</div>
+
 This repository contains only files decompiled from `scripts.rpa` that were modified to make it work, and the assets for this README.
 
 Decompiled sources are provided only for personal use. Creating standalone projects using DDLC sources is prohibited by Team Salvato [*(See "Fan Games" section in Team Salvato IP Guidelines)*](http://teamsalvato.com/ip-guidelines/)
