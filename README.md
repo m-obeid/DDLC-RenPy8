@@ -1,3 +1,7 @@
+> [!WARNING]
+> WIP.. this project isn't fully stable yet, and has some rather strange side effects with font rendering and menus not behaving right.
+> But you definitely can play the game from start to finish, no problem.
+
 <div align="center">
  <img src="ddlc_logo.png" width="256px" height="256px" alt="DDLC-Logo">
  <h1>Doki Doki Literature Club using Ren'Py 8!</h1>
