@@ -1,6 +1,17 @@
 init python:
+    def screenshot_srf_size():
+        width, height = renpy.get_physical_size()
+        if float(width) / float(height) > 16.0/9.0:
+            width = height * 16 / 9
+        else:
+            height = width * 9 / 16
+        return (width, height)
+
     def screenshot_srf():
         srf = renpy.display.draw.screenshot(None)
+        
+        # Scale srf to 16:9 form of the window
+        srf = renpy.display.scale.smoothscale(srf, screenshot_srf_size())
         return srf
 
     def invert():
@@ -75,33 +86,19 @@ init python:
     class Tear(renpy.Displayable):
         def __init__(self, number, offtimeMult, ontimeMult, offsetMin, offsetMax, srf=None):
             super(Tear, self).__init__()
-            self.width, self.height = renpy.get_physical_size()
-
-            if float(self.width) / float(self.height) > 16.0 / 9.0:
-                self.width = self.height * 16 // 9  # Ensure integers
-            else:
-                self.height = self.width * 9 // 16  # Ensure integers
-
-            self.width = int(self.width)  # Ensure integers
-            self.height = int(self.height)  # Ensure integers
+            self.width, self.height = screenshot_srf_size()
 
             self.number = number
-
-            if not srf:
-                self.srf = screenshot_srf()
-            else:
-                self.srf = srf
+            if not srf: self.srf = screenshot_srf()
+            else: self.srf = srf
 
             self.pieces = []
             tearpoints = [0, self.height]
-
             for i in range(number):
-                tearpoints.append(random.randint(10, self.height - 10))  # Now works
-
+                tearpoints.append(random.randint(10, int(self.height) - 10))
             tearpoints.sort()
-
-            for i in range(number + 1):
-                self.pieces.append(TearPiece(tearpoints[i], tearpoints[i + 1], offtimeMult, ontimeMult, offsetMin, offsetMax))
+            for i in range(number+1):
+                self.pieces.append(TearPiece(tearpoints[i], tearpoints[i+1], offtimeMult, ontimeMult, offsetMin, offsetMax))
 
         def render(self, width, height, st, at):
             render = renpy.Render(self.width, self.height)
