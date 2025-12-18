@@ -1,3 +1,7 @@
+> [!IMPORTANT] 
+> With the release of the official port of DDLC to mobile platforms, this project is mostly deprecated.
+> I highly suggest supporting Team Salvato by [downloading the game from Play Store or App Store instead](https://teamsalvato.com/news/ddlc-is-now-available-on-ios-and-android/).
+
 
 <div align="center">
  <img src="ddlc_logo.png" width="256px" height="256px" alt="DDLC-Logo">
